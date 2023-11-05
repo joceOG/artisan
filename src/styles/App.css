@@ -1,0 +1,52 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.centerbutton {
+    justify-content: center;
+    align-content: center;
+    position: flex-end;
+}
+
+.carousel-container {
+    width: 400px;
+    height: 300px;
+    border: 5px 5px 5px 5px solid;
+    border-color: #FDCE4D;
+    /* Ajustez la hauteur en fonction de vos besoins */
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
