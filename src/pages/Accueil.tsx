@@ -1,26 +1,21 @@
 import React from 'react';
-import imgartisan1 from '../assets/artisan1.jpg'
-import imgartisan2 from '../assets/artisan2.jpg'
-import imgartisan3 from '../assets/artisan3.jpg'
-import imgartisan4 from '../assets/artisan4.jpg'
-import imgartisan5 from '../assets/artisan5.jpg';
-import a15 from '../assets/a15.jpg';
-import a17 from '../assets/a17.jpg';
 
-import FlexibleImage from '../components/FlexibleImage';
+import FlexibleImage from '../components/FlexibleImage/FlexibleImage';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
 import Grid from '@mui/material/Grid';
-import { Box, Button, CardMedia, Container, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, CardMedia, Container, CssBaseline, Paper, Stack, Typography } from '@mui/material';
 import Carousel from 'react-material-ui-carousel/dist/components/Carousel';
-import FlexibleBanniere from '../components/FlexibleBanniere';
+import FlexibleBanniereA from '../components/FlexibleBanniere/FlexibleBanniereAccueil';
 import { styled } from '@mui/material/styles';
 import { ButtonProps } from '@mui/material/Button';
 import { yellow } from '@mui/material/colors';
 import GalerieAccueil from '../components/GalerieAccueil';
 import Produits from '../components/Produits';
 import Footer from '../components/Footer';
+import FlexibleBanniereAccueil from '../components/FlexibleBanniere/FlexibleBanniereAccueil';
+import App2 from '../components/Motion/App/App2';
 
 
 
@@ -33,23 +28,10 @@ const ColorButton = styled(Button)<ButtonProps>(() => ({
   },
 }));
 
-
-
 const Accueil: React.FC = () => {
   return <div>
-          
-       <FlexibleBanniere/>
-           <Container  style={{ height:'600px' }} >      
-            <Box sx={{ mt: 0, p:40 }}>
-            <div className="center">
-              <Stack spacing={2} >
-                <ColorButton variant="contained">DECOUVREZ NOS SERVICES</ColorButton>   
-              </Stack>
-            </div>   
-             </Box>       
-           </Container>
-    
-
+       <FlexibleBanniereAccueil/>
+       <App2/>
       <br></br>
       <GalerieAccueil/>
       <Produits/>
@@ -85,8 +67,27 @@ export default Accueil;
   </Grid>
   </Grid>
 
-   <div className="center">
-        <div className='carousel-container'>
+<Grid container >
+  <Grid item xs={3} style={{}}>
+    <Box sx={{ mt: 15 , mr :10 , ml:10}}>
+      <h1><b>Artisan Coiffure</b></h1>
+    <Typography fontSize={12} fontWeight={300}>Espace de service de bien être</Typography>
+    </Box>
+  </Grid>
+  <Grid item xs={9}>
+  <Container component="section" maxWidth="xs" >
+        <Box
+          sx={{
+            position:"relative",
+            marginTop: 3,
+            display: 'flex',
+            alignItems: 'right',
+          }}
+        >
+          <div style={{
+              width: 450,
+              height:300,
+            }}>
             <Carousel>
             <Paper>
             <FlexibleImage src={imgartisan4} alt="Image Crroussel 1" />
@@ -99,6 +100,10 @@ export default Accueil;
             </Paper>
            </Carousel>
         </div>
-      </div>
+        </Box>
+      </Container>
+  </Grid>
+
+  </Grid>
 
   */

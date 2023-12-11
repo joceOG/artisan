@@ -97,7 +97,7 @@ const images = [
   },
   {
     url: a17,
-    title: 'Coiffure',
+    title: 'Coiffure Full',
     width: '38%',
   },
   {

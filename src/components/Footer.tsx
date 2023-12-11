@@ -3,8 +3,8 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import ListText from './ListText';
-import ListTextIcon from './ListTextIcon';
+import ListText from './ListText/ListText';
+import ListTextIcon from './ListText/ListTextIcon';
 import SocialMediaIcon from './SocialMediaIcon';
 
 const Footer: React.FC = () => {

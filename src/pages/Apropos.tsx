@@ -1,5 +1,5 @@
 import React from 'react';
-import FlexibleBanniere3 from '../components/FlexibleBanniere3';
+import FlexibleBanniereApropos from '../components/FlexibleBanniere/FlexibleBanniereApropos';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
@@ -23,7 +23,7 @@ const Apropos: React.FC = () => {
   
   
   return <div>
-   <FlexibleBanniere3></FlexibleBanniere3>
+   <FlexibleBanniereApropos></FlexibleBanniereApropos>
 
    <Box sx={{ padding : 18}}>
           <Grid container  >

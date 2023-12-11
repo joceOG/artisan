@@ -1,21 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const multer = require('multer');
+const cors = require('cors');
 
-const Recette = require('./recette');
-
+require("dotenv").config()
+const Service = require('./service');
 const app = express();
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    next();
-});
+mongoose.set('strictQuery', false);
 
-
-app.use(express.json());
-
-mongoose.connect('mongodb+srv://jocespeedcode:joce03232323@cluster0.84okv.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -23,22 +17,40 @@ mongoose.connect('mongodb+srv://jocespeedcode:joce03232323@cluster0.84okv.mongod
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 
-app.post('/api/recette', (req, res) => {
-    console.log(req.body)
-    delete req.body._id;
-    const recette = new Recette({
-        ...req.body
-    });
-    recette.save()
-        .then(() => res.status(201).json({ message: 'Objet enregistré !' }))
-        .catch(error => res.status(400).json({ error }));
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+app.use(cors());
+app.use(express.json());
+
+
+
+app.post('/api/service', upload.single('image'), async(req, res) => {
+    try {
+        const { nom, prix } = req.body;
+        const image = req.file.buffer // This assumes Multer is saving the file to the 'uploads/' directory
+
+        const service = new Service({ nom, prix, image });
+        await service.save();
+
+        res.status(201).json({ message: 'Data stored successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
-app.use('/api/recette', (req, res) => {
-    Recette.find()
-        .then(recette => res.status(200).json(recette))
-        .catch(error => res.status(400).json({ error }));
+// API endpoint to retrieve data
+app.get('/api/service', async(req, res) => {
+    try {
+        const data = await Service.find();
+        res.status(200).json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
+
+
 
 app.use((req, res, next) => {
     console.log('Requête reçue !');
