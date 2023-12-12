@@ -1,10 +1,10 @@
 import React from 'react';
-import FlexibleBanniere2 from '../components/FlexibleBanniere2';
+import FlexibleBanniere2 from '../components/FlexibleBanniere/FlexibleBanniereServices';
 import ImageList from '@mui/material/ImageList';
 import Box from '@mui/material/Box';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import FlexibleImage2 from '../components/FlexibleImage2';
+import FlexibleImage2 from '../components/FlexibleImage/FlexibleImage2';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Footer from '../components/Footer';
@@ -27,11 +27,12 @@ import a26 from '../assets/a26.jpg';
 import a27 from '../assets/a27.jpg';
 import a29 from '../assets/a29.jpg';
 import a30 from '../assets/a30.jpg';
+import FlexibleBanniereServices from '../components/FlexibleBanniere/FlexibleBanniereServices';
 
 const Services: React.FC = () => {
   return <div>
        
-       <FlexibleBanniere2></FlexibleBanniere2>
+       <FlexibleBanniereServices></FlexibleBanniereServices>
        
        <Box sx={{ pt : 18 , pr : 15 , pl : 15}}>
         

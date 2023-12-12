@@ -4,14 +4,12 @@ import ContactForm from '../components/ContactForm';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Box, Typography } from '@mui/material';
-import ListTextIcon from '../components/ListTextIcon';
-import ListTextIcon2 from '../components/ListTextIcon2';
-import FlexibleBanniere3 from '../components/FlexibleBanniere4';
-import FlexibleBanniere4 from '../components/FlexibleBanniere4';
+import ListTextIcon2 from '../components/ListText/ListTextIcon2';
+import FlexibleBanniereContact from '../components/FlexibleBanniere/FlexibleBanniereContact';
 
 const Contacts: React.FC = () => {
   return <div>
-    <FlexibleBanniere4/>
+    <FlexibleBanniereContact/>
   <Container sx={{ pt : 18}}>
             <Box>
             <Grid container >
