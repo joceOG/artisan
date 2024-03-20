@@ -17,8 +17,6 @@ import Footer from '../components/Footer';
 import FlexibleBanniereAccueil from '../components/FlexibleBanniere/FlexibleBanniereAccueil';
 import App2 from '../components/Motion/App/App2';
 
-
-
 const ColorButton = styled(Button)<ButtonProps>(() => ({
   backgroundColor: yellow[500],
   height : 80,

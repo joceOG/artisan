@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Stack, InputLabel } from '@mui/material';
+import { Container, TextField, Button, Stack, InputLabel, Box } from '@mui/material';
 
 interface FormValues {
   nom: string;
@@ -32,8 +32,8 @@ const ContactForm: React.FC = () => {
   return (
     <Container maxWidth="sm">
       <form onSubmit={handleSubmit}>
-      <Stack direction="row" spacing={4} sx={{ mt : 3 , width : 600}}>
-         <InputLabel style={{ width:'120px'}}>Nom</InputLabel>
+      <Stack direction="row" spacing={4} sx={{ mt : 3 , width : 350}}>
+         <InputLabel style={{ width:'120px'}} sx={{ pt : 2}}>Nom</InputLabel>
         <TextField
           label="Nom"
           name="nom"
@@ -44,8 +44,8 @@ const ContactForm: React.FC = () => {
         /> 
         </Stack>
 
-        <Stack direction="row" spacing={4} sx={{ mt : 3 , width : 600}}>
-         <InputLabel style={{ width:'120px'}}>Téléphone</InputLabel>
+        <Stack direction="row" spacing={4} sx={{ mt : 3 , width : 350}}>
+         <InputLabel style={{ width:'120px'}} sx={{ pt : 2}}>Téléphone</InputLabel>
         <TextField
           label="Téléphone"
           name="tel"
@@ -56,8 +56,8 @@ const ContactForm: React.FC = () => {
         /> 
         </Stack>
 
-        <Stack direction="row" spacing={4}  sx={{ mt : 3 , width : 600}}>
-         <InputLabel style={{ width:'120px'}}>Email</InputLabel>
+        <Stack direction="row" spacing={4}  sx={{ mt : 3 , width : 350}}>
+         <InputLabel style={{ width:'120px' }} sx={{ pt : 2}} >Email</InputLabel>
         <TextField
           label="Email"
           name="mail"
@@ -68,11 +68,11 @@ const ContactForm: React.FC = () => {
         />
         </Stack>
 
-        <Stack direction="row" spacing={4} sx={{ mt : 3 , width : 600}}>
-         <InputLabel style={{ width:'120px'}}>Sujet</InputLabel>
+        <Stack direction="row" spacing={4} sx={{ mt : 3 , width :350 }}>
+         <InputLabel style={{ width:'120px'}} sx={{ pt : 2}}>Sujet</InputLabel>
         <TextField
           label="Sujet"
-          name="Sujet"
+          name="sujet"
           value={formData.sujet}
           onChange={handleChange}
           fullWidth
@@ -80,11 +80,11 @@ const ContactForm: React.FC = () => {
         />
         </Stack>
 
-        <Stack direction="row" spacing={4} sx={{ mt : 3 , width : 600}}>
-         <InputLabel style={{ width:'120px'}}>Question</InputLabel>
+        <Stack direction="row" spacing={4} sx={{ mt : 3 , width : 350}} >
+         <InputLabel style={{ width:'120px'}} sx={{ pt : 2}}>Question</InputLabel>
         <TextField
           label="Question"
-          name="Question"
+          name="question"
           value={formData.question}
           onChange={handleChange}
           fullWidth
@@ -92,17 +92,18 @@ const ContactForm: React.FC = () => {
         />
         </Stack>
         
-       
+        <Box sx={{ justifyContent: 'center' }}>
         <Button
           color="secondary"
           size="large"
           variant="contained"
           component="a"
-          href="/"
-          sx={{ mt: 8 }}
+          href="/Contacts"
+          sx={{ mt: 8 , ml:10 }}
         >
             VALIDER
         </Button>
+        </Box>
       </form>
     </Container>
   );

@@ -1,27 +1,26 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
 import ListText from './ListText/ListText';
 import ListTextIcon from './ListText/ListTextIcon';
 import SocialMediaIcon from './SocialMediaIcon';
-
+import { Grid, Row, Col } from "rsuite"; 
 const Footer: React.FC = () => {
-  return <div>
-         <Container style={{ backgroundColor:'#ff1423;'}}>
-            <Box style={{ backgroundColor:'#ff1423;'}}>
-            <Grid container style={{ backgroundColor:'#ff1423;'}} >
-                <Grid item xs={3}>
-                    <Box sx={{ mt: 10}}>
+  return <div >
+         <Container sx={{ mt: 5 , mb:3}}>
+         <Grid> 
+              <Row> 
+              <Col xs={16}  sm={8}  md={4} lg={8}> 
+                    <Box>
                     <h1><b>Artisan Coiffure</b></h1>
                     </Box>
-                    <Box sx={{ mt: 2 , mb:5 }}>
+                    <Box sx={{ mt: 2 , mb:1 }}>
                     <ListText/>
                     </Box>
-                </Grid>
-                <Grid item xs={6}>
-                <Box sx={{ mt: 12}}>
+                </Col>
+                <Col xs={16}  sm={12}  md={4} lg={8}> 
+                <Box sx={{ mt: 2}}>
                 <Typography>
                 Nous sommes une équipe de passionnés dont le but est d'améliorer la vie de chacun.
                 Nos services s'adressent aux petites et moyennes entreprises.
@@ -30,15 +29,15 @@ const Footer: React.FC = () => {
                 <Box sx={{ mt: 3.5}}>
                   <ListTextIcon/>
                 </Box>
-                </Grid>
-                <Grid item xs={3}>
+                </Col>
+                <Col xs={16}  sm={8}  md={4} lg={8}> 
+                <Box sx={{ mb: 3 , ml : 0.5}}>
                 <SocialMediaIcon/>
+                </Box>
+                </Col>
+                </Row>
                 </Grid>
-                </Grid>
-                
-            </Box>
-
-
+            
          </Container>
 
   </div>;

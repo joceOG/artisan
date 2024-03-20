@@ -33,7 +33,7 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   width:200
 }));
 
-const baseURL = "http://127.0.0.1:3000/api/service";
+const baseURL = "https://api.artisandubienetre.co/api/service";
 
 const Reservations2: React.FC = () => {
 //Search

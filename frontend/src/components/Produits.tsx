@@ -36,8 +36,7 @@ const image = {
 function Produits() {
   return (
     <Box
-      component="section"
-      sx={{ display: 'flex', bgcolor: 'white', overflow: 'hidden' , color : 'black'}}
+      sx={{ display: 'flex', flexWrap: 'wrap', bgcolor: 'white', overflow: 'hidden' , color : 'black'}}
     >
       <Container
         sx={{
@@ -178,7 +177,7 @@ function Produits() {
           size="large"
           variant="contained"
           component="a"
-          href="/premium-themes/onepirate/sign-up/"
+          href="/services"
           sx={{ mt: 4 }}
         >
           En savoir plus

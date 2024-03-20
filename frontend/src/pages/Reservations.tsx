@@ -23,7 +23,6 @@ import a22 from '../assets/a22.jpg';
 import a19 from '../assets/a19.jpg';
 import a25 from '../assets/a25.jpg';
 import FlexibleBanniereReservations from '../components/FlexibleBanniere/FlexibleBanniereReservations';
-import BannerReservations from '../components/Motion/Banner/BannerReservations';
 import AppReservations from '../components/Motion/App/AppReservations';
 import Container from '@mui/material/Container';
 import axios from 'axios';
@@ -89,7 +88,7 @@ const Reservations: React.FC = () => {
     }
 
     try {
-      await axios.post('http://localhost:3000/api/service', formData);
+      await axios.post('api.artisandubienetre.co/api/service', formData);
       // Optionally, you can redirect or perform any other action after successful submission.
     } catch (error) {
       console.error(error);
@@ -177,7 +176,7 @@ const fetchData = async () => {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: 'http://localhost:3000/api/service',
+    url: 'https://api.artisandubienetre.co/api/service',
     headers: { },
     data : data
   };

@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import FlexibleImage2 from '../components/FlexibleImage/FlexibleImage2';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Footer from '../components/Footer';
 
@@ -28,15 +27,31 @@ import a27 from '../assets/a27.jpg';
 import a29 from '../assets/a29.jpg';
 import a30 from '../assets/a30.jpg';
 import FlexibleBanniereServices from '../components/FlexibleBanniere/FlexibleBanniereServices';
+import AppServices from '../components/Motion/Banner/BannerServices';
+import Container from '@mui/material/Container';
 
 const Services: React.FC = () => {
   return <div>
        
        <FlexibleBanniereServices></FlexibleBanniereServices>
+       <AppServices></AppServices>
        
-       <Box sx={{ pt : 18 , pr : 15 , pl : 15}}>
+      
+       <Box sx={{ pt : 2 , pr : 10 , pl : 10 , pb : 10, display: 'flex', flexWrap: 'wrap'}} >
         
-       <ImageList variant="masonry" cols={3} rowHeight={500}>
+       <ImageList sx={{ 
+          
+          
+            columnCount: {
+              xs: '1 !important',
+              sm: '2 !important',
+              md: '3 !important',
+              lg: '3 !important',
+              xl: '3 !important'
+            }  
+
+
+        }} variant="masonry" cols={3} >
         {itemData.map((item) => (
                <ImageListItem key={item.img} style={{ padding:'8px'}}>
                <FlexibleImage2
@@ -45,30 +60,43 @@ const Services: React.FC = () => {
                <Typography  variant='h5' padding={0.2}>
                 <b>{item.title}</b> 
                 </Typography>
-                 <p>{item.description}</p>
+                 <p style={{ fontSize:'16px'}}>{item.description}</p>
+                </Container>
+             </ImageListItem>
+        ))}
+      </ImageList>
+       
+       </Box>
+        
+       <Box sx={{ pt : 2 , pr : 10 , pl : 10 , display: 'flex', flexWrap: 'wrap'}} >
+        
+       <ImageList sx={{ 
+          
+          
+            columnCount: {
+              xs: '1 !important',
+              sm: '2 !important',
+              md: '3 !important',
+              lg: '3 !important',
+              xl: '3 !important'
+            }  
+
+
+        }} variant="masonry" cols={3}>
+        {itemData2.map((item) => (
+               <ImageListItem key={item.img} style={{ padding:'8px'}}>
+               <FlexibleImage2
+                  src={`${item.img}?w=248&fit=crop&auto=format`} alt={''}/>
+               <Container style={{ height:'300px' , backgroundColor:'white' , color:'black'}} >
+               <Typography  variant='h5' padding={0.2}>
+                <b>{item.title}</b> 
+                </Typography>
+                 <p style={{ fontSize:'16px'}}>{item.description}</p>
                 </Container>
              </ImageListItem>
         ))}
       </ImageList>
        </Box>
-
-       <Box sx={{ pt: 6 , pr : 15 , pl : 15}}>
-        
-        <ImageList variant="masonry" cols={3} rowHeight={500}>
-         {itemData2.map((item) => (
-                <ImageListItem key={item.img} style={{ padding:'8px'}}>
-                <FlexibleImage2
-                   src={`${item.img}?w=248&fit=crop&auto=format`} alt={''}/>
-                <Container style={{ height:'300px' , backgroundColor:'white' , color:'black'}} >
-                <Typography  variant='h5' padding={0.2}>
-                 <b>{item.title}</b> 
-                 </Typography>
-                  <p>{item.description}</p>
-                 </Container>
-              </ImageListItem>
-         ))}
-       </ImageList>
-        </Box>
 
        <Footer/>
 
@@ -93,7 +121,7 @@ const itemData = [
   {
     img: a29,
     title: 'Jakuzi',
-    description: 'Notre jacuzzi vous offre une expérience de détente inégalée. Plongez dans des eaux chaudes et réconfortantes qui apaisent vos muscles, stimulent la circulation sanguine et libèrent les tensions. Notre jacuzzi est conçu pour créer une atmosphère apaisante et intime, vous permettant de vous détendre en toute quiétude.',
+    description: 'Notre jacuzzi vous offre une expérience de détente inégalée. Plongez dans des eaux chaudes et réconfortantes qui apaisent vos muscles, stimulent la circulation sanguine et libèrent les tensions.',
   },
 ];
 
@@ -111,6 +139,27 @@ const itemData2 = [
   {
     img: a8,
     title: 'Pedicure/Manicure',
-    description: 'Découvrez le summum du luxe et du bien-être pour vos mains et vos pieds chez [Nom de votre établissement]. Nos services de manucure et pédicure sont conçus pour vous offrir une expérience de beauté et de détente inégalée, vous laissant avec des mains et des pieds soignés et resplendissants.',
+    description: 'Découvrez le summum du luxe et du bien-être pour vos mains et vos pieds chez [L\'\artisan du bien être]. Nos services de manucure et pédicure sont conçus pour vous offrir une expérience de beauté et de détente inégalée.',
   },
 ];
+
+/*
+       <Box sx={{ pt: 6 , pr : 15 , pl : 15}}>
+        
+        <ImageList variant="masonry" cols={3} rowHeight={600}>
+         {itemData2.map((item) => (
+                <ImageListItem key={item.img} style={{ padding:'8px'}}>
+                <FlexibleImage2
+                   src={`${item.img}?w=248&fit=crop&auto=format`} alt={''}/>
+                <Container style={{ height:'250px' , backgroundColor:'white' , color:'black'}} >
+                <Typography  variant='h5' padding={0.2}>
+                 <b>{item.title}</b> 
+                 </Typography>
+                 <p style={{ fontSize:'16px'}}>{item.description}</p>
+                  </Container>
+              </ImageListItem>
+         ))}
+       </ImageList>
+        </Box>
+
+        */

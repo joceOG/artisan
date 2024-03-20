@@ -6,30 +6,27 @@ import Grid from '@mui/material/Grid';
 import { Box, Typography } from '@mui/material';
 import ListTextIcon2 from '../components/ListText/ListTextIcon2';
 import FlexibleBanniereContact from '../components/FlexibleBanniere/FlexibleBanniereContact';
+import { Col, Row } from 'rsuite';
 
 const Contacts: React.FC = () => {
   return <div>
     <FlexibleBanniereContact/>
-  <Container sx={{ pt : 18}}>
-            <Box>
-            <Grid container >
-                <Grid item xs={8}>
-                <ContactForm/>
-                </Grid>
-                <Grid item xs={4}>
-                  <Typography sx={{ pt : 4}}>Ma société</Typography>
+ <br></br>
+  <Row >
+  <Col xs={24}  sm={12}  md={6} lg={12}>
+    <Box sx={{ pt :15 , pb :15 , pr :5 , pl :20 }}> 
+          <Typography sx={{ pt : 4}}>Ma société</Typography>
                   <ListTextIcon2/>
-                </Grid>
-            
-                </Grid>
-                
-            </Box>
-
-
-         </Container>
+    </Box>
+        
+  </Col>
+  <Col xs={24}  sm={12}  md={6} lg={12}>
+ <ContactForm/>
+  </Col>
+              
+  </Row>
     
-
-      <Footer/>
+  <Footer/>
   </div>;
 };
 

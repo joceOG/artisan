@@ -6,6 +6,34 @@ body {
     background-color: #000000;
 }
 
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.lien {
+    color: #BDB76B;
+    font-size: 16px;
+}
+
+.footer {
+    width: 300px;
+}
+
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-text {
+    text-align: center;
+    font-size: 16px;
+    /* Add any other styles you want for your centered text */
+}
+
 .carousel-container {
     width: 600px;
     height: 300px;
@@ -34,7 +62,9 @@ body {
     color: #FDCE4D;
 }
 
-.nav-elements {}
+.nav-elements {
+    z-index: 2;
+}
 
 .nav-elements ul {
     display: flex;
@@ -89,6 +119,7 @@ body {
         height: calc(100vh - 60px);
         transition: all 0.3s ease-in;
         overflow: hidden;
+        z-index: 2;
     }
     .nav-elements.active {
         width: 270px;
@@ -146,4 +177,9 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+.sections {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }

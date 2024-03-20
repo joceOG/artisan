@@ -1,7 +1,5 @@
 import React, { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ReactComponent as Hamburger } from '../assets/logo.svg';
-import { ReactComponent as Brand } from '../assets/logo.svg';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import FlexLogo from './FlexLogo';
